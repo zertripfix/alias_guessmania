@@ -1,45 +1,175 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# ======================================================
+# FLUTTER / DART
+# Generated files created by Flutter and Dart tooling.
+# These are always re-created and must never be committed.
+# ======================================================
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
+build/
+coverage/
 
-# Symbolication related
-app.*.symbols
+# Flutter SDK metadata (local machine specific)
+.flutter-versions/
+.metadata
 
-# Obfuscation related
-app.*.map.json
+# Backup files created by analysis tools
+analysis_options.yaml.bak
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+
+# ======================================================
+# IDE CONFIGURATION FILES
+# Editor-specific settings that should not pollute Git.
+# ======================================================
+
+# Visual Studio Code
+# Ignore everything except shared workspace configuration
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+
+
+# ======================================================
+# ANDROID
+# Gradle caches, build output, and local configuration.
+# ======================================================
+android/.gradle/
+android/build/
+android/app/build/
+
+# Local machine paths (Android SDK, etc.)
+android/local.properties
+
+# Android signing configuration (contains secrets)
+android/key.properties
+
+# Android Studio project files
+android/.idea/
+
+# Generated Flutter Android registrant
+android/**/GeneratedPluginRegistrant.java
+
+# Android keystore files (ABSOLUTELY NEVER COMMIT)
+*.jks
+*.keystore
+
+
+# ======================================================
+# IOS / MACOS
+# CocoaPods, symlinks, and generated Flutter artifacts.
+# ======================================================
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner/GeneratedPluginRegistrant.*
+
+macos/Pods/
+macos/.symlinks/
+macos/Flutter/ephemeral/
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Xcode user-specific and derived files
+*.xcworkspace
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+DerivedData/
+
+
+# ======================================================
+# WEB
+# Generated Dart tooling and compiled web output.
+# ======================================================
+web/.dart_tool/
+web/build/
+
+
+# ======================================================
+# WINDOWS DESKTOP
+# Flutter-generated desktop build and temp files.
+# ======================================================
+windows/.dart_tool/
+windows/build/
+windows/flutter/ephemeral/
+
+
+# ======================================================
+# LINUX DESKTOP
+# Flutter-generated Linux desktop artifacts.
+# ======================================================
+linux/.dart_tool/
+linux/build/
+linux/flutter/ephemeral/
+
+
+# ======================================================
+# LOG FILES AND TEMPORARY EDITOR FILES
+# ======================================================
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+
+# ======================================================
+# OPERATING SYSTEM FILES
+# Junk files created by operating systems.
+# ======================================================
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*.directory
+
+# macOS (ignored for cross-platform teams)
+.DS_Store
+
+
+# ======================================================
+# ENVIRONMENT VARIABLES
+# Local configuration and secrets.
+# ======================================================
+.env
+.env.*
+!.env.example
+
+
+# ======================================================
+# FIREBASE / GOOGLE SERVICES
+# Platform-specific Firebase configuration files.
+# ======================================================
+google-services.json
+GoogleService-Info.plist
+
+
+# ======================================================
+# FASTLANE
+# CI/CD build reports, screenshots, and test output.
+# ======================================================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+
+# ======================================================
+# MISCELLANEOUS
+# Generic backup and leftover files.
+# ======================================================
+*.bak
+*.old
