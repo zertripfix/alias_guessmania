@@ -15,9 +15,9 @@ extension DictionaryExtension on Dictionary {
   String get displayName {
     switch (this) {
       case Dictionary.easy:
-        return 'Легкий словарь';
+        return 'Easy Dictionary';
       case Dictionary.hard:
-        return 'Сложный словарь';
+        return 'Hard Dictionary';
     }
   }
 }

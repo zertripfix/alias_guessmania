@@ -71,7 +71,7 @@ class MainMenu extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'ПРОДОЛЖИТЬ',
+                              'CONTINUE',
                               style: GoogleFonts.balsamiqSans(
                                 color: Colors.white,
                                 fontSize: 22,
@@ -110,7 +110,7 @@ class MainMenu extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'НОВАЯ ИГРА',
+                            'NEW GAME',
                             style: GoogleFonts.balsamiqSans(
                               color: Colors.white,
                               fontSize: 22,
@@ -148,7 +148,7 @@ class MainMenu extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'ПРАВИЛА',
+                            'RULES',
                             style: GoogleFonts.balsamiqSans(
                               color: Colors.white,
                               fontSize: 22,
@@ -158,87 +158,87 @@ class MainMenu extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: BouncyButton(
-                            onPressed: () {
-                              _onNewGame(context);
-                            },
-                            style: BouncyButtonStyle(
-                              borderRadius: BorderRadius.circular(30),
-                              height: 70,
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(255, 249, 145, 20),
-                                  Color.fromARGB(255, 255, 155, 88),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: const Icon(
-                                    Icons.shop_rounded,
-                                    color: Colors.white,
-                                    size: 32,
-                                  ),
-                                ),
-                                Text(
-                                  'МАГАЗИН',
-                                  style: GoogleFonts.balsamiqSans(
-                                    color: Colors.white,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 8),
-                        BouncyButton(
-                          onPressed: () {
-                            _onNewGame(context);
-                          },
-                          style: BouncyButtonStyle.circle.copyWith(
-                            // borderRadius: BorderRadius.circular(30),
-                            height: 70,
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(255, 250, 145, 20),
-                                Color.fromARGB(255, 255, 155, 88),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              const Icon(
-                                Icons.settings_rounded,
-                                color: Colors.white,
-                                size: 32,
-                              ),
-                              // Text(
-                              //   'НАСТРОЙКИ',
-                              //   style: GoogleFonts.balsamiqSans(
-                              //     color: Colors.white,
-                              //     fontSize: 14,
-                              //     fontWeight: FontWeight.w900,
-                              //   ),
-                              // ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     Expanded(
+                    //       child: BouncyButton(
+                    //         onPressed: () {
+                    //           _onNewGame(context);
+                    //         },
+                    //         style: BouncyButtonStyle(
+                    //           borderRadius: BorderRadius.circular(30),
+                    //           height: 70,
+                    //           gradient: LinearGradient(
+                    //             colors: [
+                    //               Color.fromARGB(255, 249, 145, 20),
+                    //               Color.fromARGB(255, 255, 155, 88),
+                    //             ],
+                    //             begin: Alignment.topLeft,
+                    //             end: Alignment.bottomRight,
+                    //           ),
+                    //         ),
+                    //         child: Stack(
+                    //           alignment: Alignment.center,
+                    //           children: [
+                    //             Align(
+                    //               alignment: Alignment.centerLeft,
+                    //               child: const Icon(
+                    //                 Icons.shop_rounded,
+                    //                 color: Colors.white,
+                    //                 size: 32,
+                    //               ),
+                    //             ),
+                    //             Text(
+                    //               'МАГАЗИН',
+                    //               style: GoogleFonts.balsamiqSans(
+                    //                 color: Colors.white,
+                    //                 fontSize: 22,
+                    //                 fontWeight: FontWeight.w900,
+                    //               ),
+                    //             ),
+                    //           ],
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     SizedBox(width: 8),
+                    //     BouncyButton(
+                    //       onPressed: () {
+                    //         _onNewGame(context);
+                    //       },
+                    //       style: BouncyButtonStyle.circle.copyWith(
+                    //         // borderRadius: BorderRadius.circular(30),
+                    //         height: 70,
+                    //         gradient: LinearGradient(
+                    //           colors: [
+                    //             Color.fromARGB(255, 250, 145, 20),
+                    //             Color.fromARGB(255, 255, 155, 88),
+                    //           ],
+                    //           begin: Alignment.topLeft,
+                    //           end: Alignment.bottomRight,
+                    //         ),
+                    //       ),
+                    //       child: Stack(
+                    //         alignment: Alignment.center,
+                    //         children: [
+                    //           const Icon(
+                    //             Icons.settings_rounded,
+                    //             color: Colors.white,
+                    //             size: 32,
+                    //           ),
+                    //           // Text(
+                    //           //   'НАСТРОЙКИ',
+                    //           //   style: GoogleFonts.balsamiqSans(
+                    //           //     color: Colors.white,
+                    //           //     fontSize: 14,
+                    //           //     fontWeight: FontWeight.w900,
+                    //           //   ),
+                    //           // ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     SizedBox(height: 32),
                   ],
                 ),

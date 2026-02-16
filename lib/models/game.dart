@@ -13,7 +13,6 @@ class Game {
   List<Team> teams;
   List<Team> winners;
 
-
   Game({
     this.winScore = 30,
     this.roundTime = 60,
@@ -23,6 +22,16 @@ class Game {
     this.teams = const [],
     this.winners = const [],
   });
+
+  void reset() {
+    winScore = 30;
+    roundTime = 60;
+    isTasksEnabled = false;
+    currentTeamIndex = 0;
+    dictionary = Dictionary.easy;
+    teams = [];
+    winners = [];
+  }
 
   void setup(GameSettings settings) {
     winScore = settings.winScore;
@@ -37,14 +46,13 @@ class Game {
   }
 
   void setNextTeamIndex() {
-    if(currentTeamIndex+1 <= teams.length - 1) {
+    if (currentTeamIndex + 1 <= teams.length - 1) {
       currentTeamIndex++;
     } else {
       currentTeamIndex = 0;
     }
   }
 
-  // Serialize game state to save it
   Map<String, dynamic> toMap() {
     return {
       'winScore': winScore,
@@ -56,7 +64,6 @@ class Game {
     };
   }
 
-  /// Deserialize game state to restore it. Note: wordsBatch and currentWordIndex are not restored here.
   factory Game.fromMap(Map<String, dynamic> map) {
     return Game(
       winScore: map['winScore'],

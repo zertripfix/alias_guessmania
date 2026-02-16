@@ -38,8 +38,8 @@ class RoundResultsViewmodel extends ChangeNotifier {
   }
 
   void saveScore() {
-    gameFlowVM.game.teams[gameFlowVM.game.currentTeamIndex].score = _score;
-    gameFlowVM.checkWin();
+    gameFlowVM.game.teams[gameFlowVM.game.currentTeamIndex].score += _score;
+    if(gameFlowVM.checkWin()) return;
     gameFlowVM.game.setNextTeamIndex();
     gameFlowVM.showResults();
   }

@@ -8,7 +8,7 @@ class Winners extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var viewModel = context.watch<GameFlowViewModel>();
+    var viewModel = context.read<GameFlowViewModel>();
     return Scaffold(
       appBar: AppBar(),
 
@@ -39,7 +39,8 @@ class Winners extends StatelessWidget {
         child: FilledButton(
           child: Text('END GAME'),
           onPressed: () {
-            viewModel.play();
+            viewModel.deleteSavedGame();
+            Navigator.of(context).pop();
           },
         ),
       ),
@@ -47,15 +48,18 @@ class Winners extends StatelessWidget {
   }
 
   Widget winnersWidget(GameFlowViewModel viewModel) {
-    if (viewModel.game.winners.length > 1) {
+    var winners = viewModel.game.winners;
+    if (winners.length == viewModel.game.teams.length) {
+      return Text('Draw!');
+    } else if (winners.length > 1) {
       return Column(
         children: [
-          Text('Победители:'),
-          for (var team in viewModel.game.winners) Text(team.name.displayName),
+          Text('Winners:'),
+          for (var team in winners) Text(team.name.displayName),
         ],
       );
     } else {
-      return Text(viewModel.game.getCurrentTeam().name.displayName);
+      return Text('Winner: ${winners[0].name.displayName}');
     }
   }
 }

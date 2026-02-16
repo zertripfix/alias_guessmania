@@ -20,7 +20,6 @@ class DatabaseService {
     return _database!;
   }
 
-  // Для явной инициализации БД
   Future<void> init() async => _database = await _initDatabase();
 
   Future<Database> _initDatabase() async {
@@ -108,7 +107,7 @@ class DatabaseService {
   Future<List<String>> getWords(Dictionary dictionary) async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(dictionary.name);
-    return List.generate(maps.length, (i) => maps[i]['ru']);
+    return List.generate(maps.length, (i) => maps[i]['ua']);
   }
 
   //-------------- Save and load game state --------------
@@ -125,7 +124,6 @@ class DatabaseService {
     });
   }
 
-  /// Throws exception if no save found
   Future<Game> loadSave() async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query(

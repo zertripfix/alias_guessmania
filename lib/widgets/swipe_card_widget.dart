@@ -22,7 +22,10 @@ class _SwipeCardWidgetState extends State<SwipeCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var gameViewModel = context.watch<GameViewmodel>();
+    var gameViewModel = context.read<GameViewmodel>();
+    final showInitialCard = context.select<GameViewmodel, bool>(
+      (vm) => vm.showInitialCard,
+    );
 
     return CardSwiper(
       controller: controller,
@@ -55,11 +58,11 @@ class _SwipeCardWidgetState extends State<SwipeCardWidget> {
         down: true,
       ),
       cardBuilder: (context, index, percentThresholdX, percentThresholdY) {
-        if (gameViewModel.showInitialCard && index == 0) {
+        if (showInitialCard && index == 0) {
           // Стартовая карточка
           return CardContainer(
             child: const Text(
-              'Свайпай вверх или вниз,\nчтo6ы начать!',
+              'Swipe up or down,\nto start!',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
@@ -70,12 +73,8 @@ class _SwipeCardWidgetState extends State<SwipeCardWidget> {
           );
         } else {
           final String? word =
-              index == 0 &&
-                      !isTopCardChanged &&
-                      !gameViewModel.showInitialCard ||
-                  index == 1 &&
-                      isTopCardChanged &&
-                      !gameViewModel.showInitialCard
+              index == 0 && !isTopCardChanged && !showInitialCard ||
+                  index == 1 && isTopCardChanged && !showInitialCard
               ? gameViewModel.currentWord
               : null;
 

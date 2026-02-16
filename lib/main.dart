@@ -1,6 +1,6 @@
 import 'package:alias/services/database_service.dart';
 import 'package:alias/viewmodels/game_flow_viewmodel.dart';
-import 'package:alias/views/main_menu/main_menu.dart';
+import 'package:alias/views/main_menu.dart';
 import 'package:bouncy_button/bouncy_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

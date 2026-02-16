@@ -11,17 +11,17 @@ extension TeamNameExtension on TeamName {
   String get displayName {
     switch (this) {
       case TeamName.snottyTrolls:
-        return 'Сопливые тролли';
+        return 'Snotty Trolls'; // Сопливые тролли
       case TeamName.smartSlimes:
-        return 'Умные слизни';
+        return 'Smart Slimes'; // Умные слизни
       case TeamName.dumplingsOfWisdom:
-        return 'Пельмешки мудрости';
+        return 'Dumplings Of Wisdom'; // Пельмешки мудрости
       case TeamName.spaceBums:
-        return 'Космические бомжики';
+        return 'Space Bums'; // Космические бомжики
       case TeamName.bunsOfPower:
-        return 'Булочки власти'; //Пиріжечки влади
+        return 'Buns Of Power'; // Пиріжечки влади | Булочки власти
       case TeamName.predatoryDandelions:
-        return 'Хищные одуванчики'; //Хижі кульбабки
+        return 'Predatory Dandelions'; //Хижі кульбабки | Хищные одуванчики
     }
   }
 }

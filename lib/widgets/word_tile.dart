@@ -71,7 +71,7 @@ class WordTile extends StatelessWidget {
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 16),
-      title: Text(word.ru),
+      title: Text(word.ua),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

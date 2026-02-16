@@ -37,9 +37,9 @@ class GameSettingsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  int _currentStep = 1;
+  int _currentStep = 0;
   int get currentStep => _currentStep;
-  final int totalSteps = 4;
+  final int totalSteps = 3;
 
   void nextStep() {
     if (_currentStep < totalSteps - 1) {

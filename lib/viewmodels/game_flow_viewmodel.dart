@@ -1,10 +1,12 @@
+import 'dart:math' as math;
+
 import 'package:alias/models/game_settings.dart';
 import 'package:alias/models/round.dart';
 import 'package:alias/services/database_service.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../models/game.dart';
-import 'enums/game_state.dart';
+import 'package:alias/models/enums/game_state.dart';
 
 class GameFlowViewModel extends ChangeNotifier {
   final DatabaseService _db;
@@ -26,13 +28,16 @@ class GameFlowViewModel extends ChangeNotifier {
     await checkSavedGame();
   }
 
-  void checkWin() {
+  bool checkWin() {
     if (game.currentTeamIndex == game.teams.length - 1) {
-      game.winners = game.teams
-          .where((team) => team.score >= game.winScore)
-          .toList();
-      _transitionTo(GameState.winners);
+      final maxScore = game.teams.map((t) => t.score).reduce(math.max);
+      if (maxScore >= game.winScore) {
+        game.winners = game.teams.where((t) => t.score == maxScore).toList();
+        _transitionTo(GameState.winners);
+        return true;
+      }
     }
+    return false;
   }
 
   void play() {
@@ -41,6 +46,10 @@ class GameFlowViewModel extends ChangeNotifier {
 
   void showRoundResults() {
     _transitionTo(GameState.roundResults);
+  }
+
+  void showSettings() {
+    _transitionTo(GameState.settings);
   }
 
   void showResults() {
@@ -105,8 +114,9 @@ class GameFlowViewModel extends ChangeNotifier {
   Future<void> deleteSavedGame() async {
     await _db.deleteSave();
     _round.reset();
+    _game.reset();
     hasSavedGame = false;
     notifyListeners();
-    _transitionTo(GameState.settings);
+    showSettings();
   }
 }

@@ -1,5 +1,8 @@
+import 'package:alias/models/enums/word_state.dart';
 import 'package:alias/viewmodels/game_viewmodel.dart';
-import 'package:alias/views/main_menu/main_menu.dart';
+import 'package:alias/views/main_menu.dart';
+import 'package:alias/widgets/game_score_widget.dart';
+import 'package:alias/widgets/game_timer_widget.dart';
 import 'package:alias/widgets/swipe_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -11,9 +14,6 @@ class Gameplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var guessed = context.select((GameViewmodel vm) => vm.guessed);
-    var skipped = context.select((GameViewmodel vm) => vm.skipped);
-
     return Scaffold(
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -24,9 +24,9 @@ class Gameplay extends StatelessWidget {
               MaterialPageRoute(builder: (_) => MainMenu()),
             );
           },
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
-        title: Text('${context.watch<GameViewmodel>().timeLeft}'),
+        title: const GameTimerWidget(),
         centerTitle: true,
       ),
       body: Stack(
@@ -35,36 +35,11 @@ class Gameplay extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 350.0),
-            child: Container(
-              height: 60,
-              width: 100,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.lightGreen.withAlpha(200),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Text(
-                guessed.toString(),
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
+            child: const GameScoreWidget(state: WordState.guessed),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 350.0),
-            child: Container(
-              height: 60,
-              width: 100,
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.red.withAlpha(150),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Text(
-                skipped.toString(),
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
+            child: const GameScoreWidget(state: WordState.skipped),
           ),
           Align(
             alignment: Alignment.center,

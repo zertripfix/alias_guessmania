@@ -20,7 +20,7 @@ class GameViewmodel extends ChangeNotifier {
   bool get isTimerRunning => _timer != null && _timer!.isActive;
   List<Word> get words => gameFlowVM.round.wordsBatch;
   int get currentWordIndex => gameFlowVM.round.currentWordIndex;
-  String get currentWord => words[currentWordIndex].ru;
+  String get currentWord => words[currentWordIndex].ua;
 
   Future<void> startGame() async {
     if (showInitialCard) {
