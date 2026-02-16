@@ -3,7 +3,7 @@
 [![Flutter Version](https://img.shields.io/badge/Flutter-3.x-blue.svg)](https://flutter.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A modern, feature-rich mobile implementation of the classic word-guessing party game "Alias" (also known as "Say Anything" or "Ekipa"). Built with Flutter, this app brings the beloved tabletop experience to your pocket with a fresh, animated interface and thoughtful gameplay enhancements.
+A modern, feature-rich mobile implementation of the classic word-guessing party game "Alias". Built with Flutter, this app brings the beloved tabletop experience to your pocket with a fresh, animated interface and thoughtful gameplay enhancements.
 
 ---
 
