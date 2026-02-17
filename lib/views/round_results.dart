@@ -10,7 +10,6 @@ class RoundResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final viewModel = context.read<RoundResultsViewmodel>();
-    // final words = viewModel.playedWords;
 
     return Scaffold(
       appBar: AppBar(
@@ -26,15 +25,11 @@ class RoundResults extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Consumer<RoundResultsViewmodel>(
-              builder: (context, vm, child) {
-                return ListView.builder(
-                  itemCount: vm.playedWords.length,
-                  itemBuilder: (context, index) {
-                    final word = vm.playedWords[index];
-                    return WordTile(word: word, index: index);
-                  },
-                );
+            child: ListView.builder(
+              itemCount: viewModel.playedWords.length,
+              itemBuilder: (context, index) {
+                final word = viewModel.playedWords[index];
+                return WordTile(word: word, index: index);
               },
             ),
           ),
